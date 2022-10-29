@@ -21,9 +21,9 @@ blockquote {
 	font-family: 'Kaushan Script', cursive;
 }
 
-/* --------------------------------------------------- */
 
-/* barvy */
+/*barvy*/ 
+
 :root {
 	--svetla: #edf3f5;
 	--seda: #b2bec3;
@@ -35,34 +35,134 @@ blockquote {
 	--limetka: #c4e538;
 }
 
-/*
-	Všimni si, jak jsou zde nadefinované barvy.
-	Potřebný kód barvy si odtamtud můžeš vyzobnout a použít
-	ve svém kódu, ale existuje i lepší způsob.
+.tip-vlevo { background-color: var(--svetla);}
+.tip-vpravo { background-color: var(--svetla);}
 
-  CSS custom properties, někdy také označované jako CSS
-	variables (CSS proměnné), je způsob, jak si	pojmenovat
-	nějakou hodnotu a potom ji v kódu opakovaně používat.
-	Často se používá právě pro barvy a další "nastavení".
+h1,h2 {color: var(--zelena);}
 
-	Když si chci nějakou hodnotu nadefinovat, použiji zápis
-	--mujnazev: hodnota
-	Když chci, abych mohl hodnotu používat všude v CSS,
-	založím ji uvnitř selektoru :root, takže např.:
-	:root {
-		--mojebarva: #ff8800;
-	}
+.meta {color: var(--seda);}
 
-	Chci-li potom dál v CSS hodnotu použít, stačí použít funkci var a v závorce název proměnné.Např.:
-	.odstavec {
-		color: var(--mojebarva);
-	}
+blockquote {color: var(--seda);}
 
-	Nemusím si tak pamatovat kódy barev nebo neustále v CSS jezdit nahoru a dolů, abych si je odněkud zkopíroval.
+figcaption {color: var(--seda);}
 
-	Více o CSS custom properties:
-	- https://www.w3schools.com/css/css3_variables.asp
-	- https://css-tricks.com/patterns-for-practical-css-custom-properties-use/
-	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
-*/
+footer { color:var(--seda);}
 
+footer a { color:var(--seda);}
+
+
+/* grid layout */
+
+
+.blog {
+	display:grid;
+	grid-template-columns: 1fr 4fr 2fr;
+	grid-column-gap:40px;
+}
+
+header {grid-column: 2 / 3;}
+
+h2 {grid-column: 2 / 3;}
+
+p { grid-column: 2 / 3; }
+
+.tip-vlevo { grid-column: 1 / 2;}
+
+.tip-vpravo { grid-column: 3 / 4;}
+
+figure { grid-column: 1 / -1; }
+
+blockquote { grid-column: 1 / -1; }
+
+footer { grid-column: 2 / 3; }
+
+
+/* ostatni */
+
+h1 {
+font-size: 72px;
+margin-top: 72px;
+}
+
+.meta {
+	margin-bottom: 0px;
+	margin-top: 80px;	
+}
+
+
+figure img  {
+	width: 100%;
+	margin: 0;
+
+}
+
+
+
+.tip-vlevo {
+display:flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+text-align:right;
+border-right: 5px solid var(--zluta);
+margin:auto;
+;
+}
+
+.tip-vlevo img { 
+	width: 80%;
+	padding-top: 10px;
+}
+
+.tip-vlevo p {
+	padding-right: 15px;
+}
+
+
+.tip-vpravo {
+	border-left: 5px solid var(--zluta);
+	margin:auto;
+	padding-left: 15px; 
+
+}
+
+.tip-vlevo a,
+.tip-vpravo a {
+	color: var(--oranzova);
+}
+
+
+
+
+
+
+
+
+blockquote {
+	text-align: center;
+	font-size: 48px;
+}
+
+blockquote::before {
+	content: "" ;
+	display:block;
+	width: 150px;
+	height: 5px;
+	background-color: var(--limetka);
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 36px;
+}
+
+blockquote::after {
+	content: "" ;
+	display:block;
+	width: 150px;
+	height: 5px;
+	background-color: var(--limetka);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 36px;
+
+
+}
